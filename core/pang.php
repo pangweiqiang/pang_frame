@@ -19,11 +19,8 @@ class pang{
         $mothed = $routeObj->action;
         $controller = $routeObj->controller;
         $class = '\app\controllers\\'.$controller.'Controller';
-        echo $class."</br>";
         $conObj = new $class;
         $conObj->$mothed();
-        echo "</br>";
-        var_dump($conObj);
     }
 
     /**
@@ -40,7 +37,7 @@ class pang{
             include $path;
             self::$classMap[$class] = $class;
         }else{
-            return false;
+            throw new \Exception('文件不存在');
         }
     }
 
