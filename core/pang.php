@@ -7,15 +7,17 @@
  */
 namespace core;
 use app\controllers\indexController;
+use core\lib\log;
 
 class pang{
     public static $classMap;
+    private $assignArr = [];
     public function __construct()
     {
-
     }
     public static function run(){
         $routeObj = new \core\lib\route();
+        new log();
         $mothed = $routeObj->action;
         $controller = $routeObj->controller;
         $class = '\app\controllers\\'.$controller.'Controller';
@@ -38,6 +40,18 @@ class pang{
             self::$classMap[$class] = $class;
         }else{
             throw new \Exception('文件不存在');
+        }
+    }
+    public function assign($key,$val){
+        $this->assignArr[$key] = $val;
+    }
+    public function display($file){
+        $filePath = APP.'/views/'.$file;
+        if(is_file($filePath)){
+            !empty($this->assignArr) && extract($this->assignArr);
+            include $filePath;
+        }else{
+            throw new \Exception('视图文件不存在');
         }
     }
 

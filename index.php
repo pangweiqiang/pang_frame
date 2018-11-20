@@ -11,8 +11,8 @@
  */
 
 define('PANG_FRAME',dirname(__FILE__));
-define('CORE',PANG_FRAME.'/core');
-define('APP',PANG_FRAME.'/app');
+define('CORE',PANG_FRAME.DIRECTORY_SEPARATOR.'core');
+define('APP',PANG_FRAME.DIRECTORY_SEPARATOR.'app');
 
 
 define('DEBUG',true);
@@ -22,8 +22,9 @@ if(DEBUG){
 }else{
     ini_set('display_errors',false);
 }
-include CORE.'/common/function.php';
-include CORE.'/pang.php';
+include CORE.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'function.php';
+
+include CORE.DIRECTORY_SEPARATOR.'pang.php';
 spl_autoload_register('\core\pang::load');
 \core\pang::run();
 

@@ -9,24 +9,19 @@ namespace core\lib;
 class model extends \PDO{
     public function __construct()
     {
-        $dsn = "mysql:localhost;dbname=test";
-        $username = 'root';
-        $passwd = '260822';
+        $dateCon = config::getAll('datebase');
         try{
-            parent::__construct($dsn, $username, $passwd);
+            parent::__construct($dateCon['DSN'], $dateCon['USERNAME'], $dateCon['PASSWD']);
         }catch (\Exception $e){
             echo $e->getMessage();
         }
-
     }
     public function getData(){
         try{
-            $ret = $this->query("SELECT t.* FROM test.user t");
+            $ret = $this->query("SELECT t.* FROM test.test t");
         }catch (\Exception $e){
             echo $e->getMessage();
         }
-
-        var_dump($ret);
         var_dump($ret->fetchAll());
     }
 }
