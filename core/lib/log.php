@@ -7,10 +7,13 @@
  */
 namespace core\lib;
 class log{
-    function __construct()
-    {
+    private static $logObj;
+    public static function init(){
         $driver = config::get('driver','config');
         $class = 'core\lib\drivers\logs\\'.$driver;
-        $conObj = new $class;
+        self::$logObj = new $class;
+    }
+    public static function log($message,$name = 'log'){
+        self::$logObj->log($message,$name);
     }
 }

@@ -7,6 +7,7 @@
  */
 namespace app\controllers;
 use core\lib\config;
+use core\lib\log;
 use core\lib\model;
 use core\pang;
 
@@ -15,8 +16,9 @@ class indexController extends pang {
     public function index(){
         echo 'this is controller index method !';
         $model = new model();
-        $data = $model->getData();
-        var_dump($data);
+        //$data = $model->getData();
+        //var_dump($data);
+        log::log('你好','pang');
         $this->assign('title','nba体育');
         $this->assign('name','勒布朗。詹');
         $this->display('index.html');

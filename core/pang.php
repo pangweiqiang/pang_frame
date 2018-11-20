@@ -17,7 +17,7 @@ class pang{
     }
     public static function run(){
         $routeObj = new \core\lib\route();
-        new log();
+        log::init();
         $mothed = $routeObj->action;
         $controller = $routeObj->controller;
         $class = '\app\controllers\\'.$controller.'Controller';

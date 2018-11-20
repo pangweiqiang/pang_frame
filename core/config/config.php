@@ -6,5 +6,6 @@
  * Time: 15:35
  */
 return array(
-    'driver'=>'file'
+    'driver'=>'file',
+    'path'=>PANG_FRAME.DIRECTORY_SEPARATOR.'log'
 );

@@ -8,5 +8,5 @@
 return array(
     'DSN'=>'mysql:localhost;dbname=test',
     'USERNAME'=>'root',
-    'PASSWD'=>''
+    'PASSWD'=>'260822'
 );
