@@ -8,10 +8,10 @@
 namespace core\lib\drivers\logs;
 class file{
     public function log($pathName = 'log',$message){
-        $pathName = PANG_FRAME.DIRECTORY_SEPARATOR.$pathName;
-        if(!is_dir($pathName)){
-            mkdir($pathName,0777);
+        $path = PANG_FRAME.DIRECTORY_SEPARATOR.'log';
+        if(!is_dir($path)){
+            mkdir($path,0777);
         }
-        file_put_contents();
+        return file_put_contents($pathName.DIRECTORY_SEPARATOR.$pathName.date('YmdHi').'.log',date('Y-m-d H:i:s').json_encode($message).PHP_EOL,FILE_APPEND);
     }
 }
