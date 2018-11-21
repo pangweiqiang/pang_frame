@@ -14,16 +14,16 @@ define('PANG_FRAME',dirname(__FILE__));
 define('CORE',PANG_FRAME.DIRECTORY_SEPARATOR.'core');
 define('APP',PANG_FRAME.DIRECTORY_SEPARATOR.'app');
 include 'vendor/autoload.php';
-
 define('DEBUG',true);
-
 if(DEBUG){
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
     ini_set('display_errors',true);
 }else{
     ini_set('display_errors',false);
 }
 include CORE.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'function.php';
-
 include CORE.DIRECTORY_SEPARATOR.'pang.php';
 spl_autoload_register('\core\pang::load');
 \core\pang::run();

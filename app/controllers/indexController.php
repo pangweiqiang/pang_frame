@@ -16,11 +16,13 @@ class indexController extends pang {
     public function index(){
         echo 'this is controller index method !';
         $model = new model();
+        $data = $model->select('test','*',['id'=>1]);
+        var_dump($data);
         //$data = $model->getData();
-        //var_dump($data);
+        //var_dump($data);efawef
         log::log('你好','pang');
         $this->assign('title','nba体育');
-        $this->assign('name','勒布朗。詹');
+        $this->assign('name','jamas');
         $this->display('index.html');
     }
 }

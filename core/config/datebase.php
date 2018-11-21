@@ -8,5 +8,9 @@
 return array(
     'DSN'=>'mysql:localhost;dbname=test',
     'USERNAME'=>'root',
-    'PASSWD'=>'260822'
+    'PASSWD'=>'',
+    'DATABASE_TYPE'=>'mysql',
+    'DATABASE_NAME'=>'test',
+    'HOST'=>'localhost',
+    'PORT'=>'3306'
 );

@@ -6,12 +6,22 @@
  * Time: 下午11:27
  */
 namespace core\lib;
-class model extends \PDO{
+use Medoo\Medoo;
+
+class model extends Medoo {
     public function __construct()
     {
         $dateCon = config::getAll('datebase');
         try{
-            parent::__construct($dateCon['DSN'], $dateCon['USERNAME'], $dateCon['PASSWD']);
+            //$dateCon['DSN'], $dateCon['USERNAME'], $dateCon['PASSWD'];
+            $config = [
+                'database_type' =>$dateCon['DATABASE_TYPE'],
+                'database_name' => $dateCon['DATABASE_NAME'],
+                'server' => $dateCon['HOST'],
+                'username' => $dateCon['USERNAME'],
+                'password' => $dateCon['PASSWD'],
+            ];
+            parent::__construct($config);
         }catch (\Exception $e){
             echo $e->getMessage();
         }
