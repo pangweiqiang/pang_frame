@@ -13,7 +13,7 @@
 define('PANG_FRAME',dirname(__FILE__));
 define('CORE',PANG_FRAME.DIRECTORY_SEPARATOR.'core');
 define('APP',PANG_FRAME.DIRECTORY_SEPARATOR.'app');
-
+include 'vendor/autoload.php';
 
 define('DEBUG',true);
 

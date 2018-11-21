@@ -1,0 +1,18 @@
+{
+  "name": "pang framework",
+  "description": "this is a simple,high performance framework",
+  "type": "framework",
+  "require": {
+    "php":">=5.5",
+    "guzzlehttp/guzzle":"*",
+    "filp/whoops":"*",
+    "symfony/var-dumper":"*",
+    "catfan/medoo":"*"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
