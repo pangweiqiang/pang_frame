@@ -7,7 +7,8 @@
     "guzzlehttp/guzzle":"*",
     "filp/whoops":"*",
     "symfony/var-dumper":"*",
-    "catfan/medoo":"*"
+    "catfan/medoo":"*",
+    "twig/twig":"*"
   },
   "repositories": {
     "packagist": {

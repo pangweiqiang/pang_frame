@@ -25,4 +25,8 @@ class indexController extends pang {
         $this->assign('name','jamas');
         $this->display('index.html');
     }
+    public function b(){
+        echo 1;
+    }
+
 }

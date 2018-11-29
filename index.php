@@ -10,9 +10,9 @@
  * 3启动框架
  */
 
-define('PANG_FRAME',dirname(__FILE__));
-define('CORE',PANG_FRAME.DIRECTORY_SEPARATOR.'core');
-define('APP',PANG_FRAME.DIRECTORY_SEPARATOR.'app');
+define('PANG_FRAME',dirname(__FILE__));//当前项目根目录路径
+define('CORE',PANG_FRAME.DIRECTORY_SEPARATOR.'core');//项目核心文件路径
+define('APP',PANG_FRAME.DIRECTORY_SEPARATOR.'app');//项目文件目录
 include 'vendor/autoload.php';
 define('DEBUG',true);
 if(DEBUG){
