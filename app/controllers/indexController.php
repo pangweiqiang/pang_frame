@@ -12,6 +12,8 @@ use core\lib\model;
 use core\pang;
 
 class indexController extends pang {
+
+
     public $a = 'afewfawef';
     public function index(){
         echo 'this is controller index method !';
