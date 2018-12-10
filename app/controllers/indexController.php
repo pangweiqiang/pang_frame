@@ -27,8 +27,26 @@ class indexController extends pang {
         $this->assign('name','jamas');
         $this->display('index.html');
     }
-    public function b(){
-        echo 1;
+    public function headerDemo(){
+        
     }
+    public function b(){
+        session_start();
+        $_SESSION['user_name'] = 'pangweiqiang';
+        $_SESSION['password'] = '123';
+    }
+    public function c(){
 
+        /*$str = 'user_name|s:12:"pangweiqiang";password|s:3:"123"';
+        var_dump(unserialize($str));exit;*/
+        session_start();
+        var_export($_SESSION);
+        echo $_SESSION['user_name'];
+        echo $_SESSION['password'];
+    }
+    public function d(){
+        session_start();
+       session_destroy();
+      //  unset($_SESSION['user_name']);
+    }
 }
