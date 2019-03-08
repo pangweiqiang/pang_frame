@@ -21,7 +21,11 @@ class route{
             if(isset($pathArr[0])){
                 $this->controller = $pathArr[0];
             }
+
             if(isset($pathArr[1])){
+                if(false !== strpos($pathArr[1],'?') ){
+                    $pathArr[1] = explode('?',$pathArr[1])[0];//接受？
+                }
                 $this->action = $pathArr[1];
             }else{
                 $this->action = 'index';
