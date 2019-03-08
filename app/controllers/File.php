@@ -22,7 +22,7 @@ function handleFile(){
 }
 //handleFile();
 function newFile(){
-    
+
     $arr = scandir('./aaa');
     //var_dump($arr);exit;
     if(!is_dir('./aaa')){
