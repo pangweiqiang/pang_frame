@@ -28,12 +28,16 @@ class indexController extends pang {
         $this->display('index.html');
     }
     public function headerDemo(){
-        
+        //var_dump($_GET['name']);
+        //include 'superArr.php';
+        header('HTTP/1.1 301 Move Permanently');
+        header('Location: http://www.pang.com/index/index');
     }
     public function b(){
         session_start();
         $_SESSION['user_name'] = 'pangweiqiang';
         $_SESSION['password'] = '123';
+        setcookie('_user_info',session_id());
     }
     public function c(){
 
