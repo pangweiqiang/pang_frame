@@ -8,7 +8,8 @@
     "filp/whoops":"*",
     "symfony/var-dumper":"*",
     "catfan/medoo":"*",
-    "twig/twig":"*"
+    "twig/twig":"*",
+    "php-amqplib/php-amqplib": ">=2.6.1"
   },
   "repositories": {
     "packagist": {

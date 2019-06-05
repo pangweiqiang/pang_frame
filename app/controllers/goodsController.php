@@ -39,7 +39,6 @@ class goodsController {
         $c = &$b;
         xdebug_debug_zval('a');
     }
-
     /**
      * @author pwq
      * unset的点
@@ -190,13 +189,7 @@ etc;
      * 被固态的内容不包括后缀的内容  否则会影响判断
      */
     static function gtGroup(){
-        $str = "11111a";
-        $pattern1 = '/\d*a/';
-        $pattern2 = '/(?>\d*)a/';
-        var_dump(preg_match($pattern1,$str));
-        var_dump(preg_match($pattern2,$str));
-        echo ucfirst('aaav aa');
-        echo ucwords('aaaa aa');
+        echo 1;
 
     }
     static function shellSort($arr){
